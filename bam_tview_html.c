@@ -374,4 +374,3 @@ tview_t* text_tv_init(const char *fn, const char *fn_fa, const char *samples,
     tv->my_drawaln=text_drawaln;
     return tv;
     }
-

@@ -1,19 +1,19 @@
 @HD	VN:1.4	SO:queryname
 @SQ	SN:ref1	LN:35	M5:89b96de7acc5918c2858ef92710be7d4
 @CO	The MIT License
-@CO	
+@CO
 @CO	Copyright (c) 2014 Genome Research Ltd.
-@CO	
+@CO
 @CO	Permission is hereby granted, free of charge, to any person obtaining a copy
 @CO	of this software and associated documentation files (the "Software"), to deal
 @CO	in the Software without restriction, including without limitation the rights
 @CO	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 @CO	copies of the Software, and to permit persons to whom the Software is
 @CO	furnished to do so, subject to the following conditions:
-@CO	
+@CO
 @CO	The above copyright notice and this permission notice shall be included in
 @CO	all copies or substantial portions of the Software.
-@CO	
+@CO
 @CO	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 @CO	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 @CO	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -21,14 +21,14 @@
 @CO	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 @CO	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 @CO	THE SOFTWARE.
-@CO	
+@CO
 @CO	              1         2         3
 @CO	     12345678901234567890123456789012345 Padded base numbering
 @CO	Ref  GGGATCCTCTAGAGT*****CGACCTGCAGGCATG 15M 5D 15M
 @CO	     123456789012345     678901234567890 Depadded base numbering
 @CO	              1              2         3
 @CO	Insert              ACGTA
-@CO	
+@CO
 @CO	Read Padded Sequence                     Pad CIGAR  (Depadded CIGAR)
 @CO	==== ===============                     =========  ================
 @CO	r001 GGGATCCTCTAGAGT*****CGACCTGCAGGCATG 15M 5D 15M (30M)

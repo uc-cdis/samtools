@@ -480,5 +480,3 @@ int bam_mating(int argc, char *argv[])
     sam_global_args_free(&ga);
     return 1;
 }
-
-

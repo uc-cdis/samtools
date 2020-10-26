@@ -14,5 +14,5 @@ SAMtools 0.1.x releases and from the standalone branch in the repository.
 Colin Hercus updated novo2sam.pl to support gapped alignment by
 novoalign.
 
-Petr Danecek contributed the header parsing library sam_header.c and 
+Petr Danecek contributed the header parsing library sam_header.c and
 sam2vcf.pl script.

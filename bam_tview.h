@@ -102,4 +102,3 @@ typedef struct Tixel
     }tixel_t;
 
 #endif
-

@@ -19,7 +19,7 @@ Release 1.9 (18th July 2018)
 
    - The '--remove-overlaps' option discounts overlapping portions of
      templates when computing coverage and mapped base counting. (#855)
-   
+
    - When a target file is in use, the number of bases inside the
      target is printed and the percentage of target bases with coverage
      above a given threshold specified by the '--cov-threshold' option. (#855)
@@ -33,7 +33,7 @@ Release 1.9 (18th July 2018)
 
    - Now warns about zero-length and truncated sequences due to the
      requested range being beyond the end of the sequence. (#834)
-     
+
    - Gets a new option (--continue) that allows it to carry on
      when a requested sequence was not in the index. (#834)
 
@@ -119,13 +119,13 @@ Release 1.8 (3rd April 2018)
  * In samtools depth `-d 0` will effectively remove the depth limit. (#764)
 
  * Improvements made to samtools collate's interface and documentation.  It is
-   now possible to specify an output file name using `-o`, instead of deriving  
+   now possible to specify an output file name using `-o`, instead of deriving
    it from the prefix used for temporary files.  The prefix itself is now
    optional if `-o` or `-O` (to stdout) is used. (#780)
 
  * Bug-fixes:
 
-   - Make samtools addreplacerg choose output format by file extension. (#767; 
+   - Make samtools addreplacerg choose output format by file extension. (#767;
      reported by Argy Megalios)
 
    - Merge tests now work on ungzipped data, allowing tests to be run against
@@ -163,7 +163,7 @@ Release 1.7 (26th January 2018)
 
   - The BED filter (`-L` option) will use the index to skip through the file
   - Reads from overlapping regions will only be output once
-  
+
 * samtools bedcov will now ignore BED comment and header lines (#571; thanks
   to Daniel Baker).
 

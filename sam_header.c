@@ -833,4 +833,3 @@ char **sam_header2tbl_n(const void *dict, const char type[2], const char *tags[]
     *n = nout;
     return out;
 }
-

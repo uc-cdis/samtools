@@ -67,4 +67,3 @@ int main_flags(int argc, char *argv[])
     }
     return 0;
 }
-

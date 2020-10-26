@@ -35,7 +35,7 @@ In addition, building the configure script requires:
 
 Running the configure script uses awk, along with a number of
 standard UNIX tools (cat, cp, grep, mv, rm, sed, among others).  Almost
-all installations will have these already.  
+all installations will have these already.
 
 Running the test harness (make test) uses:
 

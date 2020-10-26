@@ -4,19 +4,19 @@
 @RG	ID:grp3	DS:Group_3	LB:Library_3	SM:Sample
 @PG	ID:prog1	PN:emacs	CL:emacs
 @CO	The MIT License
-@CO	
+@CO
 @CO	Copyright (c) 2014 Genome Research Ltd.
-@CO	
+@CO
 @CO	Permission is hereby granted, free of charge, to any person obtaining a copy
 @CO	of this software and associated documentation files (the "Software"), to deal
 @CO	in the Software without restriction, including without limitation the rights
 @CO	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 @CO	copies of the Software, and to permit persons to whom the Software is
 @CO	furnished to do so, subject to the following conditions:
-@CO	
+@CO
 @CO	The above copyright notice and this permission notice shall be included in
 @CO	all copies or substantial portions of the Software.
-@CO	
+@CO
 @CO	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 @CO	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 @CO	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE

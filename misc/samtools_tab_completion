@@ -1,8 +1,8 @@
 ################################################################################
-# Copyright (c) 2016 Genome Research Ltd. 
-# 
-# Author: George Hall <gh10@sanger.ac.uk> 
-# 
+# Copyright (c) 2016 Genome Research Ltd.
+#
+# Author: George Hall <gh10@sanger.ac.uk>
+#
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
 # "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
 # distribute, sublicense, and/or sell copies of the Software, and to
 # permit persons to whom the Software is furnished to do so, subject to
 # the following conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be included
 # in all copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 # EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
@@ -23,19 +23,19 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ################################################################################
 
-# This script determines whether the user is trying to complete a subcommand or 
+# This script determines whether the user is trying to complete a subcommand or
 # a long-option, then determines and displays possible completions. For commands
-# with long-options, the initial '-' must be first be typed in order to trigger 
-# the completion mechanism. 
+# with long-options, the initial '-' must be first be typed in order to trigger
+# the completion mechanism.
 
-# This file must be sourced for the tab completions to work - it is advisable to 
+# This file must be sourced for the tab completions to work - it is advisable to
 # source it from your .bashrc. By default, it will only perform tab completion for
 # a binary called 'samtools'. To enable tab completion for other versions of
-# Samtools, or for Samtools binaries with different names, simply append 
-# 'complete -F _samtools_options <name of binary>' to the end of this file. This 
-# file will then need to be sourced again. 
+# Samtools, or for Samtools binaries with different names, simply append
+# 'complete -F _samtools_options <name of binary>' to the end of this file. This
+# file will then need to be sourced again.
 
-_samtools_options() 
+_samtools_options()
 {
 
 	SAMTOOLS_BIN="${COMP_WORDS[0]}"
@@ -52,7 +52,7 @@ _samtools_options()
 		COMPREPLY=($(compgen -W "${OPTS}" -- ${CUR}))
 		return 0
 
-	else 
+	else
 
 		# Complete long-options (if available) for current subcommand
 
@@ -60,7 +60,7 @@ _samtools_options()
 
 		OPTS=$($SAMTOOLS_BIN $CURRENT_SUB 2>&1 | grep -oh "\(\-\-\)\([[:alnum:]]\|\-\)* " | \
 			xargs -I @ printf -- @)
-		
+
 		if [[ ${CUR} == -* ]] ; then
 			COMPREPLY=($(compgen -W "${OPTS}" -- ${CUR}))
 			return 0
@@ -74,4 +74,3 @@ _samtools_options()
 }
 
 complete -F _samtools_options samtools
-

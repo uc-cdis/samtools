@@ -15,7 +15,7 @@ Author: Heng Li <lh3@live.co.uk>
 Date:   Thu Feb 16 14:39:34 2012 -0500
 
     removed sample
-    
+
     Downsampling already exists in "view". View also keeps pairing while "sample" does not.
 
 commit ffdeed3e5d4a530bfdf6f9ba97fff0ba7add6cba
@@ -31,7 +31,7 @@ Author: Heng Li <lh3@me.com>
 Date:   Thu Feb 16 11:21:14 2012 -0800
 
     Merge pull request #8 from nh13/master
-    
+
     Patches
 
 commit c554160df16ec7748cfdda4c7b54c641be7b809f
@@ -88,7 +88,7 @@ Author: Jonathan Manning <jonathan.manning@lifetech.com>
 Date:   Thu Feb 16 10:47:14 2012 -0500
 
     Check write filehandle after opening for write. tamw/tamr is a union type, so change is only semantic.
-    
+
     Signed-off-by: Nils Homer <nils.homer@lifetech.com>
 
 commit fef53330416631690f60fdff42b6e43d764170dc
@@ -96,7 +96,7 @@ Author: Jonathan Manning <jonathan.manning@lifetech.com>
 Date:   Thu Feb 16 10:44:59 2012 -0500
 
     Catch and report invalid BAM header, instead of segfaulting later on.
-    
+
     Signed-off-by: Nils Homer <nils.homer@lifetech.com>
 
 commit 5cc013fe4930bf9b6e7963aab1cd4a3c94f695bc
@@ -104,7 +104,7 @@ Author: Jonathan Manning <jonathan.manning@lifetech.com>
 Date:   Thu Feb 16 10:44:16 2012 -0500
 
     Add downsample to examples.
-    
+
     Signed-off-by: Nils Homer <nils.homer@lifetech.com>
 
 commit b3fa9e7071532905a81dc7aa48eadc24b8c8846b
@@ -112,7 +112,7 @@ Author: Jonathan Manning <jonathan.manning@lifetech.com>
 Date:   Thu Feb 16 10:43:48 2012 -0500
 
     Adjust for leading hard clip on colorspace reads.
-    
+
     Signed-off-by: Nils Homer <nils.homer@lifetech.com>
 
 commit 1a9296c1389469d1c1db5b8069f0e11ffcc8abb2
@@ -120,7 +120,7 @@ Author: Jonathan Manning <jonathan.manning@lifetech.com>
 Date:   Thu Feb 16 10:42:52 2012 -0500
 
     Add samtools sample command, contributed by Davide Cittaro <davide.cittaro@ifom-ieo-campus.it>.
-    
+
     Signed-off-by: Nils Homer <nils.homer@lifetech.com>
 
 commit 2a804f3379748aeba944f1dec306dd726ff3235e
@@ -128,7 +128,7 @@ Author: Jonathan Manning <jonathan.manning@lifetech.com>
 Date:   Thu Feb 16 10:42:07 2012 -0500
 
     Add samtools qa command, contributed by Roman Valls Guimera <roman.valls.guimera@scilifelab.se>.
-    
+
     Signed-off-by: Nils Homer <nils.homer@lifetech.com>
 
 commit 0f3207fe8fd93e44d40fcf57204079c8c06d24a6
@@ -136,7 +136,7 @@ Author: Jonathan Manning <jonathan.manning@lifetech.com>
 Date:   Thu Feb 16 10:39:08 2012 -0500
 
     Makefile cleanup - allow CC, CFLAGS, LDFLAGS to be passed on make command line. Use LDFLAGS in samtools compile.
-    
+
     Signed-off-by: Nils Homer <nils.homer@lifetech.com>
 
 commit 6e7df604025f6a86881bf7f4a16f30e15d31538a
@@ -144,7 +144,7 @@ Author: Jonathan Manning <jonathan.manning@lifetech.com>
 Date:   Thu Feb 16 10:31:15 2012 -0500
 
     Allow max_mem for sort to be specified with units.
-    
+
     Signed-off-by: Nils Homer <nils.homer@lifetech.com>
 
 commit f12ebcaf6e60d34180a27d70e09b743cef140b98
@@ -152,7 +152,7 @@ Author: Jonathan Manning <jonathan.manning@lifetech.com>
 Date:   Thu Feb 16 10:29:11 2012 -0500
 
     Allow user defined [lowercase] tags in header elements.
-    
+
     Signed-off-by: Nils Homer <nils.homer@lifetech.com>
 
 commit 50b931fa3312dc109537a4260698ddecd0f06a05
@@ -160,7 +160,7 @@ Author: Jonathan Manning <jonathan.manning@lifetech.com>
 Date:   Thu Feb 16 10:27:11 2012 -0500
 
     Check lowerbound in text entry box to avoid segfault in tview. Remove redundant call to bam_aux_get.
-    
+
     Signed-off-by: Nils Homer <nils.homer@lifetech.com>
 
 commit 5e729da5190949a813d20d329eab7ddb661816bd
@@ -265,7 +265,7 @@ Author: Heng Li <lh3@live.co.uk>
 Date:   Tue Oct 4 10:13:23 2011 -0400
 
     change size_t to uint32_t in bam_header_t
-    
+
     This may cause issues on 64-bit big-endian machines. Reported and fixed by Paolo Emilio Mazzon.
 
 commit af31bf5a78aea03baf6eb90fe50076549d499f6e
@@ -310,10 +310,10 @@ Author: Heng Li <lh3@live.co.uk>
 Date:   Fri Sep 2 12:13:08 2011 -0400
 
     Merge https://github.com/lh3/samtools into reduce
-    
+
     Conflicts:
     	bam_md.c
-    
+
     Fixed a few typos in the merge
 
 commit aebab302399c24eaa6c5ab79d13d6bd5e2e9ea9a
@@ -322,7 +322,7 @@ Author: Heng Li <lh3@live.co.uk>
 Date:   Fri Sep 2 09:03:49 2011 -0700
 
     Merge pull request #4 from peterjc/x_equals2
-    
+
     Implement basic support for =/X CIGAR operations
 
 commit 19ff1d3d7f47d7e61b121292aefe5a74bb8a18d2
@@ -349,7 +349,7 @@ Author: Heng Li <lh3@live.co.uk>
 Date:   Thu Aug 18 17:21:54 2011 -0700
 
     Merge pull request #3 from peterjc/x_equals
-    
+
     Accept SAM files using = in CIGAR (treats X and = as M)
 
 commit 9a0ed9a6b85c7981465f459300208dbd93e3c6f5
@@ -363,7 +363,7 @@ Author: Heng Li <lh3@live.co.uk>
 Date:   Mon Aug 8 10:22:22 2011 -0400
 
     bugfix: indexing takes huge memory
-    
+
     This happens when an unmapped mate has coordinate 1. Thank Joel Martin for the fix.
 
 commit a3f6738593e944354a8f75306687d8b3acf08bf1
@@ -456,7 +456,7 @@ Author: Heng Li <lh3@live.co.uk>
 Date:   Wed Jul 6 09:46:09 2011 -0400
 
     bugfix: incorrect idxstats for the last seq
-    
+
     Again, this bug is caused by 3rd-party code for the sorting order checking.
 
 commit 84f6ca62db6e27b8c4c711e7b5f3ca704bf27b4f
@@ -650,7 +650,7 @@ Author: Heng Li <lh3@live.co.uk>
 Date:   Wed May 4 10:11:59 2011 -0400
 
     improved sorting order checking in index
-    
+
     Patches from Jonathan Manning
 
 commit 1c2dc6762c5f7cd946046b53346513f2f9761dbf
@@ -796,7 +796,7 @@ Author: Heng Li <lh3@live.co.uk>
 Date:   Fri Apr 15 10:04:34 2011 -0400
 
     fixed a bug
-    
+
     actually not fix, but hide it
 
 commit 088e13c32453fb533b7bb1c65a573f9b90a23625
@@ -810,7 +810,7 @@ Author: Heng Li <lh3@live.co.uk>
 Date:   Fri Apr 15 09:28:55 2011 -0400
 
     Perform posterior contrast for small LRT
-    
+
     Posterior contrast is much slower than LRT. Nonetheless, posterior P-value is
     more robust to sequencing artifacts. Thus we may combine the two to achieve a
     balance between speed and low FPR.
@@ -838,7 +838,7 @@ Author: Heng Li <lh3@live.co.uk>
 Date:   Thu Apr 14 22:42:35 2011 -0400
 
     separate EM and posterior
-    
+
     Now, constrast is not performed unless -C is in use. EM can be invoked
     independently with -e without computing the posterior.
 
@@ -895,7 +895,7 @@ Author: Heng Li <lh3@live.co.uk>
 Date:   Wed Apr 13 00:22:10 2011 -0400
 
     implemeted EM likelihood ratio test
-    
+
     The idea is learned from a brief chat with Rasmus Nielsen.
 
 commit 0454a346b60e42b75a2f742272089810279c7131
@@ -1713,7 +1713,7 @@ Author: Heng Li <lh3@live.co.uk>
 Date:   Sun Feb 13 17:42:24 2011 -0500
 
     Revert "prepare to add bam separation"
-    
+
     This reverts commit ed6957e5211c2c4cf684dcb8bbb661052c74df6f.
 
 commit ed6957e5211c2c4cf684dcb8bbb661052c74df6f
@@ -2183,7 +2183,7 @@ Changed paths:
 
  * samtools-0.1.1-17
  * fixed a bug when there are reads without coordinates
- * also recognize type 'c' as 'A'	
+ * also recognize type 'c' as 'A'
  * found a bug in bam_lpileup.c; NOT fixed yet
 
 ------------------------------------------------------------------------
@@ -2533,7 +2533,7 @@ Changed paths:
    M /branches/dev/samtools/misc/export2sam.pl
 
  * added comments
- * fixed several bugs 
+ * fixed several bugs
 
 ------------------------------------------------------------------------
 r57 | lh3lh3 | 2008-12-20 15:44:20 +0000 (Sat, 20 Dec 2008) | 2 lines

@@ -17,7 +17,7 @@
 @PG	ID:llama_{a}
 @PG	ID:bull-3A2CCEF5	PP:donkey-6ADB4A65
 @PG	ID:donkey-6ADB4A65
-@CO	
+@CO
 @CO	Do you know?
 r000	99	insert	50	30	10M	=	80	30	ATTTAGCTAC	AAAAAAAAAA	RG:Z:cow	PG:Z:bull
 r000	211	insert	80	30	10M	=	50	-30	CCCAATCATT	AAAAAAAAAA	RG:Z:cow	PG:Z:bull

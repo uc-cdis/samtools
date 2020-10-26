@@ -298,7 +298,7 @@ int main_samview(int argc, char *argv[])
                 srand(settings.subsam_seed);
                 settings.subsam_seed = rand();
             }
- 
+
             if (q && *q == '.') {
                 settings.subsam_frac = strtod(q, &q);
                 if (*q) ret = 1;

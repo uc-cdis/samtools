@@ -53,8 +53,9 @@
 import sys
 import getopt
 
+
 def usage():
-    print '''usage: varfilter.py [options] [cns-pileup]
+    print """usage: varfilter.py [options] [cns-pileup]
 
 Options: -Q INT minimum RMS mapping quality for SNPs
          -q INT minimum RMS mapping quality for gaps
@@ -72,7 +73,8 @@ Options: -Q INT minimum RMS mapping quality for SNPs
 
          -l INT window size for filtering adjacent gaps
 
-         -p print filtered variants'''
+         -p print filtered variants"""
+
 
 def varFilter_aux(first, is_print):
     try:
@@ -82,6 +84,7 @@ def varFilter_aux(first, is_print):
             sys.stderr.write("\t".join(["UQdDWGgsiCX"[first[1]]] + first[4:]) + "\n")
     except IOError:
         sys.exit()
+
 
 mindepth = 3
 maxdepth = 100
@@ -99,25 +102,39 @@ minindelq = 0
 mincnsq = 0
 
 try:
-    options, args = getopt.gnu_getopt(sys.argv[1:], 'pq:d:D:l:Q:w:W:N:G:S:i:C:', [])
+    options, args = getopt.gnu_getopt(sys.argv[1:], "pq:d:D:l:Q:w:W:N:G:S:i:C:", [])
 except getopt.GetoptError:
     usage()
     sys.exit(2)
 for (oflag, oarg) in options:
-    if oflag == '-d': mindepth = int(oarg)
-    if oflag == '-D': maxdepth = int(oarg)
-    if oflag == '-l': gapgapwin = int(oarg)
-    if oflag == '-Q': minsnpmapq = int(oarg)
-    if oflag == '-q': mingapmapq = int(oarg)
-    if oflag == '-G': minindelscore = int(oarg)
-    if oflag == '-s': scorefactor = int(oarg)
-    if oflag == '-w': snpgapwin = int(oarg)
-    if oflag == '-W': densesnpwin = int(oarg)
-    if oflag == '-C': mincnsq = int(oarg)
-    if oflag == '-N': densesnps = int(oarg)
-    if oflag == '-p': printfilt = True
-    if oflag == '-S': minsnpq = int(oarg)
-    if oflag == '-i': minindelq = int(oarg)
+    if oflag == "-d":
+        mindepth = int(oarg)
+    if oflag == "-D":
+        maxdepth = int(oarg)
+    if oflag == "-l":
+        gapgapwin = int(oarg)
+    if oflag == "-Q":
+        minsnpmapq = int(oarg)
+    if oflag == "-q":
+        mingapmapq = int(oarg)
+    if oflag == "-G":
+        minindelscore = int(oarg)
+    if oflag == "-s":
+        scorefactor = int(oarg)
+    if oflag == "-w":
+        snpgapwin = int(oarg)
+    if oflag == "-W":
+        densesnpwin = int(oarg)
+    if oflag == "-C":
+        mincnsq = int(oarg)
+    if oflag == "-N":
+        densesnps = int(oarg)
+    if oflag == "-p":
+        printfilt = True
+    if oflag == "-S":
+        minsnpq = int(oarg)
+    if oflag == "-i":
+        minindelq = int(oarg)
 
 if len(args) < 1:
     inp = sys.stdin
@@ -131,7 +148,7 @@ staging = []
 for t in (line.strip().split() for line in inp):
     (flt, score) = (0, -1)
     # non-var sites
-    if t[3] == '*/*':
+    if t[3] == "*/*":
         continue
     is_snp = t[2].upper() != t[3].upper()
     if not (is_snp or mincnsq):
@@ -139,7 +156,9 @@ for t in (line.strip().split() for line in inp):
     # clear the out-of-range elements
     while staging:
         # Still on the same chromosome and the first element's window still affects this position?
-        if staging[0][4] == t[0] and int(staging[0][5]) + staging[0][2] + max_dist >= int(t[1]):
+        if staging[0][4] == t[0] and int(staging[0][5]) + staging[0][
+            2
+        ] + max_dist >= int(t[1]):
             break
         varFilter_aux(staging.pop(0), printfilt)
 
@@ -148,11 +167,11 @@ for t in (line.strip().split() for line in inp):
         flt = 2
     elif int(t[7]) > maxdepth:
         flt = 3
-    if t[2] == '*': # an indel
+    if t[2] == "*":  # an indel
         if minindelq and minindelq > int(t[5]):
             flt = 8
     elif is_snp:
-        if minsnpq and minsnpq> int(t[5]):
+        if minsnpq and minsnpq > int(t[5]):
             flt = 7
     else:
         if mincnsq and mincnsq > int(t[4]):
@@ -161,14 +180,16 @@ for t in (line.strip().split() for line in inp):
     # site dependent filters
     dlen = 0
     if flt == 0:
-        if t[2] == '*': # an indel
+        if t[2] == "*":  # an indel
             # If deletion, remember the length of the deletion
-            (a,b) = t[3].split('/')
+            (a, b) = t[3].split("/")
             alen = len(a) - 1
             blen = len(b) - 1
-            if alen>blen:
-                if a[0] == '-': dlen=alen
-            elif b[0] == '-': dlen=blen
+            if alen > blen:
+                if a[0] == "-":
+                    dlen = alen
+            elif b[0] == "-":
+                dlen = blen
 
             if int(t[6]) < mingapmapq:
                 flt = 1
@@ -183,13 +204,13 @@ for t in (line.strip().split() for line in inp):
 
             # calculate the filtering score (different from indel quality)
             score = int(t[5])
-            if t[8] != '*':
+            if t[8] != "*":
                 score += scorefactor * int(t[10])
-            if t[9] != '*':
+            if t[9] != "*":
                 score += scorefactor * int(t[11])
             # check the staging list for indel filtering
             for x in (y for y in staging if y[3]):
-              # Is it a SNP and is it outside the gap filter window
+                # Is it a SNP and is it outside the gap filter window
                 if x[0] < 0 or int(x[5]) + x[2] + gapgapwin < int(t[1]):
                     continue
                 if x[0] < score:
@@ -197,22 +218,30 @@ for t in (line.strip().split() for line in inp):
                 else:
                     flt = 6
                     break
-        else: # a SNP or hom-ref
+        else:  # a SNP or hom-ref
             if int(t[6]) < minsnpmapq:
                 flt = 1
             # check adjacent SNPs
             k = 1
             for x in (y for y in staging if y[3]):
-                if x[0] < 0 and int(x[5]) + x[2] + densesnpwin >= int(t[1]) and (x[1] == 0 or x[1] == 4 or x[1] == 5):
+                if (
+                    x[0] < 0
+                    and int(x[5]) + x[2] + densesnpwin >= int(t[1])
+                    and (x[1] == 0 or x[1] == 4 or x[1] == 5)
+                ):
                     k += 1
 
             # filtering is necessary
             if k > densesnps:
                 flt = 4
                 for x in (y for y in staging if y[3]):
-                    if x[0] < 0 and int(x[5]) + x[2] + densesnpwin >= int(t[1]) and x[1] == 0:
+                    if (
+                        x[0] < 0
+                        and int(x[5]) + x[2] + densesnpwin >= int(t[1])
+                        and x[1] == 0
+                    ):
                         x[1] = 4
-            else: # then check gap filter
+            else:  # then check gap filter
                 for x in (y for y in staging if y[3]):
                     if x[0] < 0 or int(x[5]) + x[2] + snpgapwin < int(t[1]):
                         continue

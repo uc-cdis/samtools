@@ -378,4 +378,3 @@ int faidx_main(int argc, char *argv[]) {
 int fqidx_main(int argc, char *argv[]) {
     return faidx_core(argc, argv, FAI_FASTQ);
 }
-
